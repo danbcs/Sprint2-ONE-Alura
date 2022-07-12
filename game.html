@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style-game.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+    <title>HANGMAN GAME | ONE</title>
+  </head>
+  <body>
+    <h1>HANGMAN GAME</h1>
+    <h4>Start by clicking a key!</h4>
+    <div class="jogo-container">
+      <div class="forca-container">
+        <svg height="250" width="200" class="forca">
+          <!-- forca -->
+          <line x1="60" y1="20" x2="140" y2="20" />
+          <line x1="140" y1="20" x2="140" y2="50" />
+          <line x1="60" y1="20" x2="60" y2="230" />
+          <line x1="20" y1="230" x2="100" y2="230" />
+
+          <!-- cabeça -->
+          <circle cx="140" cy="70" r="20" class="forca-parte" />
+          <!-- corpo -->
+          <line x1="140" y1="90" x2="140" y2="150" class="forca-parte" />
+          <!-- braços -->
+          <line x1="140" y1="120" x2="120" y2="100" class="forca-parte" />
+          <line x1="140" y1="120" x2="160" y2="100" class="forca-parte" />
+          <!-- pernas -->
+          <line x1="140" y1="150" x2="120" y2="180" class="forca-parte" />
+          <line x1="140" y1="150" x2="160" y2="180" class="forca-parte" />
+        </svg>
+      </div>
+
+      <div class="letras-erradas-container">
+        <h4>Wrong words</h4>
+      </div>
+    </div>
+
+    <div class="palavra-secreta-container"></div>
+    <div class="categoria-secreta-container"></div>
+
+    <div class="aviso-palavra-repetida">
+      You already used that letter.
+    </div>
+    <div class="popup-container">
+      <div class="popup">
+        <h2 id="mensagem"></h2>
+        <button id="btn-jogar" onclick="reiniciarJogo()">
+          Start again
+        </button>
+        <button id="btn-sair" onclick="sairJogo()">
+          Exit
+        </button>
+        <button id="btn-addpalavra" onclick="addPalavra()">
+          Add
+        </button>
+      </div>
+    </div>
+
+    <div class="popup-container2">
+      <div class="popup">
+        <h2 id="mensagem"></h2>
+        <label for="categoria">Category:</label><br>
+        <input type="text" id="categoria" name="categoria"><br>
+        <label for="word">Word:</label><br>
+        <input type="text" id="palavra" name="palavra"><br>
+        <button id="btn-addpalavra" onclick="novaPalavra()">
+          Add
+        </button>
+        <button id="btn-jogar" onclick="reiniciarJogo()">
+          Start again
+        </button>
+        <button id="btn-sair" onclick="sairJogo()">
+          Exit
+        </button>
+      </div>
+    </div>
+
+    <script src="script-game.js"></script>
+  </body>
+</html>
